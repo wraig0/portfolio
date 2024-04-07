@@ -28,7 +28,7 @@ export default function Home() {
         <ModeToggle />
       </header>
 
-      <main className="flex flex-col items-center justify-between p-24 max-w-screen-lg">
+      <main className="flex flex-col items-center justify-between pt-12 max-w-screen-lg">
         <div className="flex flex-col gap-8 w-fit p-4 ">
           <section className="flex flex-col md:flex-row items-center justify-center gap-4">
             <Image
