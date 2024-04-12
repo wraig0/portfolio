@@ -82,4 +82,7 @@
   h3 {
     @apply text-xl font-bold tracking-tight;
   }
+  section {
+    @apply pb-7;
+  }
 }

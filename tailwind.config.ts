@@ -79,6 +79,12 @@ const config = {
       },
     },
   },
+  variants: {
+    extend: {
+      borderColor: ["hover"],
+      transitionProperty: ["hover", "focus"],
+    },
+  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
