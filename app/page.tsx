@@ -176,7 +176,7 @@ export default function Home() {
       </main>
 
       <footer className="text-zinc-400">
-        &copy; {new Date().getFullYear()} Thomas Underwood
+        &copy; Thomas Underwood {new Date().getFullYear()}
       </footer>
     </div>
   );
