@@ -70,19 +70,4 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  h1 {
-    @apply text-5xl font-extrabold tracking-tight;
-  }
-  h2 {
-    @apply text-2xl font-bold tracking-tight;
-  }
-  h3 {
-    @apply text-xl font-bold tracking-tight;
-  }
-  section {
-    @apply pb-7;
-  }
 }
