@@ -31,7 +31,7 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-between md:pt-12 w-full">
         <div className="flex flex-col gap-8 w-full ">
-          <section className="lg:p-80 md:pl-24 md:pr-48 md:pt-32 md:pb-32 pl-8 pr-8 pt-24 pb-24 bg-background flex flex-col md:flex-row items-center justify-center gap-4">
+          <section className="md:pl-24 md:pr-48 md:pt-32 md:pb-32 pl-8 pr-8 pt-24 pb-24 bg-background flex flex-col md:flex-row items-center justify-center gap-4">
             <Image
               src={me}
               alt="me"
