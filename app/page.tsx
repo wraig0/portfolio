@@ -1,10 +1,10 @@
-import { Link } from "@/components/ui/link";
 import me from "../public/me.webp";
 import moon from "../public/tothemoon.webp";
 import app from "../public/app.webp";
 import Image from "next/image";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Chip } from "@/components/ui/chip";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,14 +14,14 @@ export default function Home() {
           <Link
             href="https://www.linkedin.com/in/thomas-underwood-35b139158/"
             title="Open LinkedIn profile in a new tab"
-            className="p-1"
+            className="p-1 hover:underline"
           >
             LinkedIn
           </Link>
           <Link
             href="https://www.github.com/wraig0"
             title="Open GitHub profile in a new tab"
-            className="p-1"
+            className="p-1 hover:underline"
           >
             GitHub
           </Link>
