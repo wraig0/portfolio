@@ -70,4 +70,12 @@
   * {
     @apply border-border;
   }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-8xl font-extrabold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-bold tracking-tight;
+  }
 }

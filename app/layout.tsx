@@ -4,6 +4,16 @@ import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import Link from "next/link";
+import { ToastProvider } from "@/components/ui/toast";
+import { Toaster } from "@/components/ui/toaster";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import NavBar from "@/components/nav-bar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -31,7 +41,19 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="min-h-screen grid grid-rows-main-layout gap-4 subpixel-antialiased">
+            <header className="bg-background top-0 w-full pl-24 pr-24 pt-2 pb-2 flex flex-row items-center justify-start gap-4">
+              <NavBar />
+            </header>
+
+            <main className="w-full">
+              {children}
+              <Toaster />
+            </main>
+            <footer className="text-zinc-400 text-center">
+              &copy; Thomas Underwood {new Date().getFullYear()}
+            </footer>
+          </div>
         </ThemeProvider>
       </body>
     </html>
