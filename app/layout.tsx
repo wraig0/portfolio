@@ -42,7 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen grid grid-rows-main-layout gap-4 subpixel-antialiased">
-            <header className="bg-background top-0 w-full pl-24 pr-24 pt-2 pb-2 flex flex-row items-center justify-start gap-4">
+            <header className="bg-background top-0 w-screen">
               <NavBar />
             </header>
 

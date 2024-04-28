@@ -22,7 +22,7 @@ const projects = [
 export default function NavBar() {
   const linkStyle = navigationMenuTriggerStyle();
   return (
-    <div className="flex flex-row gap-4 items-center">
+    <div className="flex flex-row max-w-screen gap-4 items-center p-4">
       <ModeToggle />
       <NavigationMenu>
         <NavigationMenuList>

@@ -78,7 +78,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       gridTemplateRows: {
-        "main-layout": "3rem auto 2rem",
+        "main-layout": "auto 1fr auto",
       },
     },
   },

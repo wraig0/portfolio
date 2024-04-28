@@ -1,9 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Switch } from "@/components/ui/switch";
 import {
   Table,
   TableBody,
@@ -12,6 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useToast } from "@/components/ui/use-toast";
+import { Check, Trash2, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 
@@ -27,6 +30,7 @@ export default function Projects() {
   const [todoText, setTodoText] = useState("");
   const [todos, setTodos] = useState<Todo[]>([]);
   const [firstLoad, setFirstLoad] = useState(true);
+  const [isDeleteEnabled, setIsDeleteEnabled] = useState(false);
   const { toast } = useToast();
 
   const showToast = (title: string, description?: string, error?: boolean) => {
@@ -74,7 +78,6 @@ export default function Projects() {
       },
     ];
     persistTodos(newTodos);
-    showToast("Todo added");
   };
 
   const toggleTodo = (id: string) => {
@@ -93,7 +96,6 @@ export default function Projects() {
 
   const deleteTodo = (id: string) => {
     persistTodos(todos.filter((todo) => todo.id !== id));
-    showToast("Todo deleted");
   };
 
   useEffect(() => {
@@ -111,10 +113,11 @@ export default function Projects() {
   }, [firstLoad]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 ">
       <section className="w-full flex flex-col gap-2 justify-center items-center">
         <div className="flex flex-row items-center gap-2">
           <Input
+            title="Add todo text"
             ref={inputRef}
             spellCheck
             autoFocus
@@ -126,12 +129,21 @@ export default function Projects() {
             onKeyDown={(e) => e.key === "Enter" && submit()}
           />
           <Button
+            title="Add todo"
             disabled={!todoText.length}
-            className="p-2 bg-blue-500 text-white rounded-lg disabled:cursor-not-allowed"
+            className="p-2 bg-blue-500 hover:bg-blue-500 text-white rounded-lg"
             onClick={submit}
           >
             Add
           </Button>
+          <Card className="flex flex-row gap-2 p-2">
+            <Trash2 />
+            <Switch
+              title={isDeleteEnabled ? "Disable delete" : "Enable delete"}
+              checked={isDeleteEnabled}
+              onCheckedChange={() => setIsDeleteEnabled((enabled) => !enabled)}
+            />
+          </Card>
         </div>
       </section>
       <section className="w-full pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-64 lg:pr-64 flex flex-col justify-center items-center">
@@ -164,12 +176,15 @@ export default function Projects() {
                     </TableCell>
                     <TableCell>
                       <Checkbox
+                        title="Toggle todo done"
                         checked={todo.done}
                         onClick={() => toggleTodo(todo.id)}
                       />
                     </TableCell>
                     <TableCell>
                       <Button
+                        title="Delete todo"
+                        disabled={!isDeleteEnabled}
                         onClick={() => deleteTodo(todo.id)}
                         variant="destructive"
                       >
