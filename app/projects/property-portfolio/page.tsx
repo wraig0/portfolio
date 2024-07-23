@@ -5,8 +5,8 @@ import editTenancy0 from "@/public/edit-tenancy-0.webp";
 import editTenancy1 from "@/public/edit-tenancy-1.webp";
 
 import Image from "next/image";
-import { PropsWithChildren } from "react";
-import Paragraph from "../../../components/paragraph";
+import Paragraph from "@/components/paragraph";
+import ProjectSection from "@/components/project-section";
 
 const WIDTH_SCREENSHOT = 500;
 const LOADING = "lazy";
@@ -36,7 +36,7 @@ const screenshots = [
 
 export default function MobileApp() {
   return (
-    <section className="p-8 lg:p-32 flex flex-col gap-8">
+    <ProjectSection>
       <h1>Property portfolio</h1>
       <Paragraph>
         A mobile app for property management. The app allows you to manage your
@@ -69,6 +69,6 @@ export default function MobileApp() {
           />
         ))}
       </div>
-    </section>
+    </ProjectSection>
   );
 }
