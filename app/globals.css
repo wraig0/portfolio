@@ -78,4 +78,8 @@
   h2 {
     @apply text-2xl font-bold tracking-tight;
   }
+
+  body {
+    @apply text-xl
+  }
 }
