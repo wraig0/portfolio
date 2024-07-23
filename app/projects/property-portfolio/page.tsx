@@ -66,6 +66,7 @@ export default function MobileApp() {
             src={screenshot.src}
             alt={screenshot.alt}
             title={screenshot.alt}
+            className="border rounded"
           />
         ))}
       </div>
