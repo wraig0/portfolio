@@ -36,7 +36,7 @@ const screenshots = [
 
 export default function MobileApp() {
   return (
-    <section className="p-32 flex flex-col gap-8">
+    <section className="p-8 lg:p-32 flex flex-col gap-8">
       <h1>Property portfolio</h1>
       <Paragraph>
         A mobile app for property management. The app allows you to manage your
