@@ -10,19 +10,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
-
-const projects = [
-  {
-    name: "Todo App",
-    description: "A simple todo app",
-    href: "/projects/todos",
-  },
-];
+import { projects } from "../app/projects/projects";
 
 export default function NavBar() {
-  const linkStyle = navigationMenuTriggerStyle();
+  let linkStyle = navigationMenuTriggerStyle();
+  linkStyle += " align-items-center";
+  console.log(linkStyle);
   return (
-    <div className="flex flex-row max-w-screen gap-4 items-center p-4">
+    <div className="flex flex-row max-w-screen gap-4 items-center justify-center p-4">
       <ModeToggle />
       <NavigationMenu>
         <NavigationMenuList>
@@ -36,7 +31,7 @@ export default function NavBar() {
               <Link href="/projects">Projects</Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[200px] gap-3 p-4 bg-background">
+              <ul className="grid w-min gap-3 p-4 bg-background">
                 {projects.map((project) => (
                   <NavigationMenuItem key={project.href}>
                     <Link href={project.href} className={linkStyle}>
@@ -69,26 +64,6 @@ export default function NavBar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      {/*<Link href="/" className="p-1 hover:underline">
-                  Home
-                </Link>
-                <Link href="/projects" className="p-1 hover:underline">
-                  Projects
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/thomas-underwood-35b139158/"
-                  title="Open LinkedIn profile in a new tab"
-                  className="p-1 hover:underline"
-                >
-                  LinkedIn
-                </Link>
-                <Link
-                  href="https://www.github.com/wraig0"
-                  title="Open GitHub profile in a new tab"
-                  className="p-1 hover:underline"
-                >
-                  GitHub
-                </Link>*/}
     </div>
   );
 }

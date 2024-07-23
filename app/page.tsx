@@ -78,9 +78,9 @@ export default function Home() {
             </p>
             <p>
               Led the introduction of unit testing to the React code, resulting
-              in an 80% code coverage rate. This initiative significantly
-              reduced development time while enhancing the overall quality of
-              the codebase.
+              in a code coverage rate of between 80-95% across several projects.
+              This initiative significantly reduced development time while
+              enhancing the overall quality of the codebase.
             </p>
             <p>
               Developed a full-stack application using React, Node.js and
