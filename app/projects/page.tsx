@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { projects } from "./projects";
+import ProjectSection from "../../components/project-section";
 
 export default function Projects() {
   return (
-    <section className="p-8 lg:p-32 flex flex-col gap-8">
+    <ProjectSection>
       <h1>Projects</h1>
       {projects.map((project) => (
         <Link key={project.href} href={project.href}>
@@ -14,6 +15,6 @@ export default function Projects() {
           </Card>
         </Link>
       ))}
-    </section>
+    </ProjectSection>
   );
 }
