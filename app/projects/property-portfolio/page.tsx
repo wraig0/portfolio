@@ -50,12 +50,12 @@ export default function MobileApp() {
         MacBook to run the app on an iOS simulator.
       </Paragraph>
       <Paragraph>
-        I began by managing app state in react context and using react hooks to
-        manage the state of the app. I then moved to using Jotai to manage the
-        state of the app. Data storage is abstracted away from the app using a
-        data layer that I wrote. This allows me to change the data storage
-        mechanism without changing the app code. Photos are stored in the
-        user&apos;s normal photo storage on the device.
+        Initially I managed state using a combination of react context and react hooks. 
+        I then moved to using Jotai to manage the state of the app. Data storage 
+        is abstracted away from the app using a data access component that I wrote.
+        This allows me to change the data storage mechanism without changing 
+        the app code, as the interface will remain the same. 
+        Photos are stored in the user&apos;s normal photo storage on the device.
       </Paragraph>
       <div className="flex flex-row flex-wrap gap-8">
         {screenshots.map((screenshot) => (
