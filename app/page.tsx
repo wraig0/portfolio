@@ -43,23 +43,9 @@ export default function Home() {
             <h2 className="col-span-1">Key skills</h2>
 
             <div className="flex flex-row flex-wrap gap-2 justify-evenly col-span-2">
-              <Chip>React.js</Chip>
-              <Chip>TypeScript</Chip>
-              <Chip>JavaScript</Chip>
-              <Chip>Node</Chip>
-              <Chip>Next.js</Chip>
-              <Chip>Styled components</Chip>
-              <Chip>Material UI</Chip>
-              <Chip>Shadcn/ui</Chip>
-              <Chip>Microsoft Azure</Chip>
-              <Chip>Git</Chip>
-              <Chip>Jira</Chip>
-              <Chip>Confluence</Chip>
-              <Chip>Agile</Chip>
-              <Chip>C++</Chip>
-              <Chip>C#</Chip>
-              <Chip>PHP</Chip>
-              <Chip>SQL</Chip>
+              {Array.from(skills).map((skill) => (
+                <Chip key={skill}>{skill}</Chip>
+              ))}
             </div>
           </div>
         </section>
@@ -138,3 +124,22 @@ export default function Home() {
     </main>
   );
 }
+const skills = new Set([
+  "React.js",
+  "TypeScript",
+  "JavaScript",
+  "Node",
+  "Next.js",
+  "Styled components",
+  "Material UI",
+  "Shadcn/ui",
+  "Microsoft Azure",
+  "Git",
+  "Jira",
+  "Confluence",
+  "Agile",
+  "C++",
+  "C#",
+  "PHP",
+  "SQL",
+]);
